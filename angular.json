@@ -47,6 +47,20 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [],
+            "styles": ["src/global_styles.css"],
+            "scripts": [],
+            "browsers": "ChromeHeadless",
+            "watch": true,
+            "codeCoverage": true
+          }
         }
       },
       "prefix": "app",
