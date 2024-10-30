@@ -1,0 +1,25 @@
+name: Code quality
+
+on:
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  code-quality:
+    name: Code quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Code Climate
+        uses: erzz/codeclimate-standalone@v0.0.2
+        with:
+          html_report: true
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Code Climate Report
+          path: codeclimate-report.html
