@@ -28,10 +28,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: dist/demo/browser
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v2
+      #  with:
+      #    path: dist/demo/browser
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
